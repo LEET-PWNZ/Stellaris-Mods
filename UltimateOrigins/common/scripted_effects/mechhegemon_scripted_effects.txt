@@ -1,0 +1,186 @@
+create_mechhegemon_org_member={
+	if={
+		limit={
+			root = { has_militarist_government = yes }
+		}
+		create_mechhegemon_country_militarist = yes
+	}else_if={
+		limit={
+			root = { has_pacifist_government = yes }
+		}
+		create_mechhegemon_country_pacifist = yes
+	}else_if={
+		limit={
+			root = { has_materialist_government = yes }
+		}
+		create_mechhegemon_country_materialist = yes
+	}else_if={
+		limit = {
+			root = { is_authoritarian = yes }
+		}
+		create_mechhegemon_country_authoritarian = yes
+	}else={
+		create_mechhegemon_country_xenophilematerialist = yes	
+	}
+
+	
+}
+
+create_mechhegemon_org_spec={
+	create_species = {
+		name = random
+		# plural = origin_mechhegemon_species_plural
+		# adjective = origin_mechhegemon_species_name
+		class = random_non_machine
+		portrait = random
+		traits = random
+		homeworld = this
+		effect = {
+			save_event_target_as = mechhegemon_planet_1_species
+		}
+	}
+}
+
+create_mechhegemon_org_starbase={
+	mechhegemon_preinit = yes
+	solar_system = {
+		create_starbase = {
+			size = starbase_starport
+			module = shipyard
+			building = crew_quarters
+			owner = event_target:mechhegemon_member_1
+			effect = {
+				set_starbase_module = {
+					slot = 1
+					module = trading_hub
+				}
+			}
+		}
+	}
+}
+
+mechhegemon_preinit={
+	create_colony = {
+		owner = event_target:mechhegemon_member_1
+	}
+	generate_start_deposits_and_blockers = yes
+	generate_start_buildings_and_districts = yes
+	generate_start_pops = yes
+}
+
+
+create_mechhegemon_country_materialist={
+	create_country = {
+		name = random
+		name_list = random
+		species = event_target:mechhegemon_planet_1_species
+		type = default
+		ignore_initial_colony_error = yes
+		origin = origin_hegemon_npc
+		day_zero_contact = no
+		#authority = auth_machine_intelligence
+		randomize_ethos = yes
+		ethos = {
+			ethic = ethic_xenophile
+			ethic = ethic_materialist
+			ethic = ethic_fanatic_materialist
+		}
+		effect = {
+			save_event_target_as = mechhegemon_member_1
+			establish_communications_no_message = root
+		}
+	}
+}
+
+create_mechhegemon_country_militarist={
+	create_country = {
+		name = random
+		name_list = random
+		species = event_target:mechhegemon_planet_1_species
+		type = default
+		ignore_initial_colony_error = yes
+		origin = origin_hegemon_npc
+		day_zero_contact = no
+		#authority = auth_machine_intelligence
+		randomize_ethos = yes
+		ethos = {
+			ethic = ethic_xenophile
+			ethic = ethic_militarist
+			ethic = ethic_fanatic_militarist
+		}
+		effect = {
+			save_event_target_as = mechhegemon_member_1
+			establish_communications_no_message = root
+		}
+	}
+}
+
+create_mechhegemon_country_pacifist={
+	create_country = {
+		name = random
+		name_list = random
+		species = event_target:mechhegemon_planet_1_species
+		type = default
+		ignore_initial_colony_error = yes
+		origin = origin_hegemon_npc
+		day_zero_contact = no
+		#authority = auth_machine_intelligence
+		randomize_ethos = yes
+		ethos = {
+			ethic = ethic_xenophile
+			ethic = ethic_pacifist
+			ethic = ethic_fanatic_pacifist
+		}
+		effect = {
+			save_event_target_as = mechhegemon_member_1
+			establish_communications_no_message = root
+		}
+	}
+}
+
+create_mechhegemon_country_authoritarian={
+	create_country = {
+		name = random
+		name_list = random
+		species = event_target:mechhegemon_planet_1_species
+		type = default
+		ignore_initial_colony_error = yes
+		origin = origin_hegemon_npc
+		day_zero_contact = no
+		#authority = auth_machine_intelligence
+		randomize_ethos = yes
+		ethos = {
+			ethic = ethic_xenophile
+			ethic = ethic_authoritarian
+			ethic = ethic_fanatic_authoritarian
+		}
+		effect = {
+			save_event_target_as = mechhegemon_member_1
+			establish_communications_no_message = root
+		}
+	}
+}
+
+
+create_mechhegemon_country_xenophilematerialist={
+	create_country = {
+		name = random
+		name_list = random
+		species = event_target:mechhegemon_planet_1_species
+		type = default
+		ignore_initial_colony_error = yes
+		origin = origin_hegemon_npc
+		day_zero_contact = no
+		#authority = auth_machine_intelligence
+		randomize_ethos = yes
+		ethos = {
+			ethic = ethic_materialist
+			ethic = ethic_xenophile
+			ethic = ethic_fanatic_xenophile
+		}
+		effect = {
+			save_event_target_as = mechhegemon_member_1
+			establish_communications_no_message = root
+		}
+	}
+}

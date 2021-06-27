@@ -1,0 +1,17 @@
+on_game_start = {
+	events = {
+		ultimateorigins_game_start.1
+	}
+}
+
+empire_init_add_technologies = {
+	events = {
+		ultimateorigins_game_start.2
+	}
+}
+
+empire_init_create_ships = {
+	events = {
+		# mechhegemon_game_start.4
+	}
+}

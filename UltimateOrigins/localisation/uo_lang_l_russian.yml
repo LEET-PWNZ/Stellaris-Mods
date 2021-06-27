@@ -1,0 +1,12 @@
+﻿l_russian:
+ origin_mechhegemon:0 "Mechanist Hegemony"
+ origin_mechhegemon_desc:0 "This civilization established early contact with their immediate neighbor. Gradually, over the span of a century, they masterminded the birth of an interstellar union in which they would have a dominant role."
+ origin_tooltip_mechhegemon:0 "- Start as the leader of a §HHegemony§! federation with additional member\n- Member will occupy any Guaranteed Habitable Worlds slots near your home system\n- Start with §HThe Federation§! tradition unlocked\n- All §HMechanist§! bonusses included.\n- Hegemon is set to §HContinental§!, §HTropical§!, or §HOcean§! world preference, so one of the same is recommended for the player's starting planet." 
+
+ origin_genericfed:0 "Galactic Union"
+ origin_genericfed_desc:0 "This civilization established early contact with their immediate neighbor. Gradually, over the span of a century, they masterminded the birth of an interstellar union in which they would have a dominant role."
+ origin_tooltip_genericfed:0 "- Start as the leader of a §HGalactic Union§! federation with one additional member\n- Member will occupy any Guaranteed Habitable Worlds slots near your home system\n- Start with §HThe Federation§! tradition unlocked\n- Ally is set to §HContinental§!, §HTropical§!, or §HOcean§! world preference, so one of the same is recommended for the player's starting planet." 
+
+ origin_gestalthegemon:0 "Lax Hegemony"
+ origin_gestalthegemon_desc:0 "This civilization established early contact with their immediate neighbor. Gradually, over the span of a century, they masterminded the birth of an interstellar union in which they would have a dominant role."
+ origin_tooltip_gestalthegemon:0 "- Start as the leader of a §HHegemony§! federation with one additional member\n- Member will occupy any Guaranteed Habitable Worlds slots near your home system\n- Start with §HThe Federation§! tradition unlocked\n- §HDriven Assimilators§! are not ideal for this origin (because they can only use the §HAssimilation§! wargoal) but they can be used.\n- Hegemon is set to §HContinental§!, §HTropical§!, or §HOcean§! world preference, so one of the same is recommended for the player's starting planet." 

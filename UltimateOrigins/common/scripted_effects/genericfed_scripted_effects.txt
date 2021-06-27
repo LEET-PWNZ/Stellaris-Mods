@@ -1,0 +1,361 @@
+create_genericfed_org_member={
+	if={
+		limit={
+			root = { has_spiritualist_government = yes }
+		}
+		create_org_country_spiritualist = yes
+	}else_if={
+		limit={
+			root = { has_militarist_government = yes }
+		}
+		create_org_country_militarist = yes
+	}else_if={
+		limit={
+			root = { has_pacifist_government = yes }
+		}
+		create_org_country_pacifist = yes
+	}else_if={
+		limit={
+			root = { has_materialist_government = yes }
+		}
+		create_org_country_materialist = yes
+	}else_if={
+		limit = {
+			root = { is_authoritarian = yes }
+		}
+		create_org_country_authoritarian = yes
+	}
+	else_if={
+		limit = {
+			root = { is_egalitarian = yes }
+		}
+		create_org_country_egalitarian = yes
+	}else={
+		create_org_country_xenophile = yes	
+	}
+
+	
+}
+
+create_genericfed_org_spec={
+	create_species = {
+		name = random
+		# plural = origin_genericfed_species_plural
+		# adjective = origin_genericfed_species_name
+		class = random_non_machine
+		portrait = random
+		traits = random
+		homeworld = this
+		effect = {
+			save_event_target_as = genericfed_planet_1_species
+		}
+	}
+}
+
+create_genericfed_org_starbase={
+	genericfed_preinit = yes
+	solar_system = {
+		create_starbase = {
+			size = starbase_starport
+			module = shipyard
+			building = crew_quarters
+			owner = event_target:genericfed_member_1
+			effect = {
+				set_starbase_module = {
+					slot = 1
+					module = trading_hub
+				}
+			}
+		}
+	}
+}
+
+genericfed_preinit={
+	create_colony = {
+		owner = event_target:genericfed_member_1
+	}
+	generate_start_deposits_and_blockers = yes
+	generate_start_buildings_and_districts = yes
+	generate_start_pops = yes
+}
+
+create_org_country_spiritualist={
+	create_country = {
+		name = random
+		name_list = random
+		species = event_target:genericfed_planet_1_species
+		type = default
+		ignore_initial_colony_error = yes
+		origin = origin_hegemon_npc
+		day_zero_contact = no
+		#authority = auth_machine_intelligence
+		randomize_ethos = yes
+		ethos = {
+			ethic = ethic_xenophile
+			ethic = ethic_spiritualist
+			ethic = ethic_fanatic_spiritualist
+		}
+		effect = {
+			save_event_target_as = genericfed_member_1
+			establish_communications_no_message = root
+		}
+	}
+}
+
+create_org_country_materialist={
+	create_country = {
+		name = random
+		name_list = random
+		species = event_target:genericfed_planet_1_species
+		type = default
+		ignore_initial_colony_error = yes
+		origin = origin_hegemon_npc
+		day_zero_contact = no
+		#authority = auth_machine_intelligence
+		randomize_ethos = yes
+		ethos = {
+			ethic = ethic_xenophile
+			ethic = ethic_materialist
+			ethic = ethic_fanatic_materialist
+		}
+		effect = {
+			save_event_target_as = genericfed_member_1
+			establish_communications_no_message = root
+		}
+	}
+}
+
+create_org_country_militarist={
+	create_country = {
+		name = random
+		name_list = random
+		species = event_target:genericfed_planet_1_species
+		type = default
+		ignore_initial_colony_error = yes
+		origin = origin_hegemon_npc
+		day_zero_contact = no
+		#authority = auth_machine_intelligence
+		randomize_ethos = yes
+		ethos = {
+			ethic = ethic_xenophile
+			ethic = ethic_militarist
+			ethic = ethic_fanatic_militarist
+		}
+		effect = {
+			save_event_target_as = genericfed_member_1
+			establish_communications_no_message = root
+		}
+	}
+}
+
+create_org_country_pacifist={
+	create_country = {
+		name = random
+		name_list = random
+		species = event_target:genericfed_planet_1_species
+		type = default
+		ignore_initial_colony_error = yes
+		origin = origin_hegemon_npc
+		day_zero_contact = no
+		#authority = auth_machine_intelligence
+		randomize_ethos = yes
+		ethos = {
+			ethic = ethic_xenophile
+			ethic = ethic_pacifist
+			ethic = ethic_fanatic_pacifist
+		}
+		effect = {
+			save_event_target_as = genericfed_member_1
+			establish_communications_no_message = root
+		}
+	}
+}
+
+create_org_country_egalitarian={
+	create_country = {
+		name = random
+		name_list = random
+		species = event_target:genericfed_planet_1_species
+		type = default
+		ignore_initial_colony_error = yes
+		origin = origin_hegemon_npc
+		day_zero_contact = no
+		#authority = auth_machine_intelligence
+		randomize_ethos = yes
+		ethos = {
+			ethic = ethic_xenophile
+			ethic = ethic_egalitarian
+			ethic = ethic_fanatic_egalitarian
+		}
+		effect = {
+			save_event_target_as = genericfed_member_1
+			establish_communications_no_message = root
+		}
+	}
+}
+
+create_org_country_authoritarian={
+	create_country = {
+		name = random
+		name_list = random
+		species = event_target:genericfed_planet_1_species
+		type = default
+		ignore_initial_colony_error = yes
+		origin = origin_hegemon_npc
+		day_zero_contact = no
+		#authority = auth_machine_intelligence
+		randomize_ethos = yes
+		ethos = {
+			ethic = ethic_xenophile
+			ethic = ethic_authoritarian
+			ethic = ethic_fanatic_authoritarian
+		}
+		effect = {
+			save_event_target_as = genericfed_member_1
+			establish_communications_no_message = root
+		}
+	}
+}
+
+create_org_country_xenophile={
+	create_country = {
+		name = random
+		name_list = random
+		species = event_target:genericfed_planet_1_species
+		type = default
+		ignore_initial_colony_error = yes
+		origin = origin_hegemon_npc
+		day_zero_contact = no
+		#authority = auth_machine_intelligence
+		randomize_ethos = yes
+		ethos = {
+			ethic = ethic_xenophile
+			ethic = ethic_fanatic_xenophile
+		}
+		effect = {
+			save_event_target_as = genericfed_member_1
+			establish_communications_no_message = root
+		}
+	}
+}
+
+# create_genericfed_gest_starbase={
+# 	genericfed_preinit = yes
+# 	solar_system = {
+# 		create_starbase = {
+# 			size = starbase_starport
+# 			module = shipyard
+# 			building = crew_quarters
+# 			owner = event_target:genericfed_member_1
+# 			effect = {
+# 				set_starbase_module = {
+# 					slot = 1
+# 					module = solar_panel_network
+# 				}
+# 			}
+# 		}
+# 	}
+# }
+
+# create_genericfed_hive_member={
+# 	create_country = {
+# 		name = random
+# 		name_list = random
+# 		species = event_target:genericfed_planet_1_species
+# 		type = default
+# 		ignore_initial_colony_error = yes
+# 		day_zero_contact = no
+# 		authority = auth_hive_mind
+# 		# randomize_ethos = yes
+# 		ethos = {
+# 			ethic = ethic_gestalt_consciousness
+# 		}
+# 		origin = origin_hegemon_npc
+# 		civics = {
+# 			civic = civic_hive_empath
+# 			civic = civic_hive_strength_of_legions
+# 		}
+		
+# 		effect = {
+# 			modify_species = {
+# 				species = this
+# 				add_trait = trait_hive_mind
+# 				add_traits_at_start_of_list = yes
+# 			}
+# 			save_event_target_as = genericfed_member_1
+# 			establish_communications_no_message = root
+# 		}
+# 	}
+# }
+
+# create_genericfed_mach_member={
+# 	create_country = {
+# 		name = random
+# 		name_list = random
+# 		species = event_target:genericfed_planet_1_species
+# 		type = default
+# 		ignore_initial_colony_error = yes
+# 		day_zero_contact = no
+# 		authority = auth_machine_intelligence
+# 		# randomize_ethos = yes
+# 		ethos = {
+# 			ethic = ethic_gestalt_consciousness
+# 		}
+# 		origin = origin_hegemon_npc
+# 		civics = {
+# 			civic = civic_machine_delegated_functions
+# 			civic = civic_machine_replication
+# 		}
+		
+# 		effect = {
+# 			modify_species = {
+# 				species = this
+# 				add_trait = trait_machine_unit
+# 				add_traits_at_start_of_list = yes
+# 			}
+# 			save_event_target_as = genericfed_member_1
+# 			establish_communications_no_message = root
+# 		}
+# 	}
+# }
+
+# create_genericfed_mach_spec={
+# 	create_species = {
+# 		name = random
+# 		# plural = origin_genericfed_species_plural
+# 		# adjective = origin_genericfed_species_name
+# 		class = MACHINE
+# 		portrait = random
+# 		traits = {
+# 			trait = trait_machine_unit
+# 			trait = trait_robot_mass_produced
+# 		}
+# 		# traits = random
+# 		# immortal = yes
+# 		homeworld = this
+# 		effect = {
+# 			save_event_target_as = genericfed_planet_1_species
+# 		}
+# 	}
+# }
+
+# create_genericfed_hive_spec={
+# 	create_species = {
+# 		name = random
+# 		# plural = origin_genericfed_species_plural
+# 		# adjective = origin_genericfed_species_name
+# 		class = ART
+# 		portrait = random
+# 		traits = {
+# 			trait = trait_hive_mind
+# 			trait = trait_strong
+# 			trait = trait_resilient
+# 		}
+# 		# traits = random
+# 		# immortal = yes
+# 		homeworld = this
+# 		effect = {
+# 			save_event_target_as = genericfed_planet_1_species
+# 		}
+# 	}
+# }

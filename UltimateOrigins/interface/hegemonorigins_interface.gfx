@@ -1,0 +1,7 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_origin_mechhegemon"
+		texturefile = "gfx/event_pictures/origins/fanmech_origin.dds"
+		alwaystransparent = yes
+	}	
+}

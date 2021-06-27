@@ -1,0 +1,275 @@
+create_gestalthegemon_org_member={
+	if={
+		limit={
+			root = { has_ethic = ethic_gestalt_consciousness }
+		}
+		if={
+			limit={
+				root = { has_civic =  civic_machine_assimilator }
+			}
+			create_gestalthegemon_country_xenophilematerialist = yes
+		}else={
+			create_gestalthegemon_country_militarist = yes
+		}
+	}else_if={
+		limit={
+			root = { has_spiritualist_government = yes }
+		}
+		create_gestalthegemon_country_spiritualist = yes
+	}else_if={
+		limit={
+			root = { has_militarist_government = yes }
+		}
+		create_gestalthegemon_country_militarist = yes
+	}else_if={
+		limit={
+			root = { has_pacifist_government = yes }
+		}
+		create_gestalthegemon_country_pacifist = yes
+	}else_if={
+		limit={
+			root = { has_materialist_government = yes }
+		}
+		create_gestalthegemon_country_materialist = yes
+	}else_if={
+		limit = {
+			root = { is_authoritarian = yes }
+		}
+		create_gestalthegemon_country_authoritarian = yes
+	}
+	else_if={
+		limit = {
+			root = { is_egalitarian = yes }
+		}
+		create_gestalthegemon_country_egalitarian = yes
+	}else={
+		create_gestalthegemon_country_xenophile = yes	
+	}
+
+	
+}
+
+create_gestalthegemon_org_spec={
+	create_species = {
+		name = random
+		# plural = origin_gestalthegemon_species_plural
+		# adjective = origin_gestalthegemon_species_name
+		class = random_non_machine
+		portrait = random
+		traits = random
+		homeworld = this
+		effect = {
+			save_event_target_as = gestalthegemon_planet_1_species
+		}
+	}
+}
+
+create_gestalthegemon_org_starbase={
+	gestalthegemon_preinit = yes
+	solar_system = {
+		create_starbase = {
+			size = starbase_starport
+			module = shipyard
+			building = crew_quarters
+			owner = event_target:gestalthegemon_member_1
+			effect = {
+				set_starbase_module = {
+					slot = 1
+					module = trading_hub
+				}
+			}
+		}
+	}
+}
+
+gestalthegemon_preinit={
+	create_colony = {
+		owner = event_target:gestalthegemon_member_1
+	}
+	generate_start_deposits_and_blockers = yes
+	generate_start_buildings_and_districts = yes
+	generate_start_pops = yes
+}
+
+create_gestalthegemon_country_spiritualist={
+	create_country = {
+		name = random
+		name_list = random
+		species = event_target:gestalthegemon_planet_1_species
+		type = default
+		ignore_initial_colony_error = yes
+		origin = origin_hegemon_npc
+		day_zero_contact = no
+		#authority = auth_machine_intelligence
+		randomize_ethos = yes
+		ethos = {
+			ethic = ethic_xenophile
+			ethic = ethic_spiritualist
+			ethic = ethic_fanatic_spiritualist
+		}
+		effect = {
+			save_event_target_as = gestalthegemon_member_1
+			establish_communications_no_message = root
+		}
+	}
+}
+
+create_gestalthegemon_country_materialist={
+	create_country = {
+		name = random
+		name_list = random
+		species = event_target:gestalthegemon_planet_1_species
+		type = default
+		ignore_initial_colony_error = yes
+		origin = origin_hegemon_npc
+		day_zero_contact = no
+		#authority = auth_machine_intelligence
+		randomize_ethos = yes
+		ethos = {
+			ethic = ethic_xenophile
+			ethic = ethic_materialist
+			ethic = ethic_fanatic_materialist
+		}
+		effect = {
+			save_event_target_as = gestalthegemon_member_1
+			establish_communications_no_message = root
+		}
+	}
+}
+
+create_gestalthegemon_country_militarist={
+	create_country = {
+		name = random
+		name_list = random
+		species = event_target:gestalthegemon_planet_1_species
+		type = default
+		ignore_initial_colony_error = yes
+		origin = origin_hegemon_npc
+		day_zero_contact = no
+		#authority = auth_machine_intelligence
+		randomize_ethos = yes
+		ethos = {
+			ethic = ethic_xenophile
+			ethic = ethic_militarist
+			ethic = ethic_fanatic_militarist
+		}
+		effect = {
+			save_event_target_as = gestalthegemon_member_1
+			establish_communications_no_message = root
+		}
+	}
+}
+
+create_gestalthegemon_country_pacifist={
+	create_country = {
+		name = random
+		name_list = random
+		species = event_target:gestalthegemon_planet_1_species
+		type = default
+		ignore_initial_colony_error = yes
+		origin = origin_hegemon_npc
+		day_zero_contact = no
+		#authority = auth_machine_intelligence
+		randomize_ethos = yes
+		ethos = {
+			ethic = ethic_xenophile
+			ethic = ethic_pacifist
+			ethic = ethic_fanatic_pacifist
+		}
+		effect = {
+			save_event_target_as = gestalthegemon_member_1
+			establish_communications_no_message = root
+		}
+	}
+}
+
+create_gestalthegemon_country_egalitarian={
+	create_country = {
+		name = random
+		name_list = random
+		species = event_target:gestalthegemon_planet_1_species
+		type = default
+		ignore_initial_colony_error = yes
+		origin = origin_hegemon_npc
+		day_zero_contact = no
+		#authority = auth_machine_intelligence
+		randomize_ethos = yes
+		ethos = {
+			ethic = ethic_xenophile
+			ethic = ethic_egalitarian
+			ethic = ethic_fanatic_egalitarian
+		}
+		effect = {
+			save_event_target_as = gestalthegemon_member_1
+			establish_communications_no_message = root
+		}
+	}
+}
+
+create_gestalthegemon_country_authoritarian={
+	create_country = {
+		name = random
+		name_list = random
+		species = event_target:gestalthegemon_planet_1_species
+		type = default
+		ignore_initial_colony_error = yes
+		origin = origin_hegemon_npc
+		day_zero_contact = no
+		#authority = auth_machine_intelligence
+		randomize_ethos = yes
+		ethos = {
+			ethic = ethic_xenophile
+			ethic = ethic_authoritarian
+			ethic = ethic_fanatic_authoritarian
+		}
+		effect = {
+			save_event_target_as = gestalthegemon_member_1
+			establish_communications_no_message = root
+		}
+	}
+}
+
+create_gestalthegemon_country_xenophile={
+	create_country = {
+		name = random
+		name_list = random
+		species = event_target:gestalthegemon_planet_1_species
+		type = default
+		ignore_initial_colony_error = yes
+		origin = origin_hegemon_npc
+		day_zero_contact = no
+		#authority = auth_machine_intelligence
+		randomize_ethos = yes
+		ethos = {
+			ethic = ethic_xenophile
+			ethic = ethic_fanatic_xenophile
+		}
+		effect = {
+			save_event_target_as = gestalthegemon_member_1
+			establish_communications_no_message = root
+		}
+	}
+}
+
+create_gestalthegemon_country_xenophilematerialist={
+	create_country = {
+		name = random
+		name_list = random
+		species = event_target:gestalthegemon_planet_1_species
+		type = default
+		ignore_initial_colony_error = yes
+		origin = origin_hegemon_npc
+		day_zero_contact = no
+		#authority = auth_machine_intelligence
+		randomize_ethos = yes
+		ethos = {
+			ethic = ethic_materialist
+			ethic = ethic_xenophile
+			ethic = ethic_fanatic_xenophile
+		}
+		effect = {
+			save_event_target_as = gestalthegemon_member_1
+			establish_communications_no_message = root
+		}
+	}
+}

@@ -1,0 +1,122 @@
+origin_mechhegemon = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/fanmech_icon.dds"
+	picture = GFX_origin_mechhegemon
+	max_once_global = yes
+
+	playable = {
+		host_has_dlc = "Federations"
+		host_has_dlc =  "Utopia"
+	}
+
+	possible = {
+		ethics = {
+			NOR = {
+				value = ethic_gestalt_consciousness
+				value = ethic_xenophobe
+				value = ethic_fanatic_xenophobe
+				value = ethic_egalitarian
+				value = ethic_fanatic_egalitarian
+			}
+			OR={
+				text = civic_tooltip_materialist
+				value = ethic_materialist
+				value = ethic_fanatic_materialist
+			}
+		}
+		civics = {
+			NOR = {
+				value = civic_fanatic_purifiers
+				value = civic_inwards_perfection
+			}
+		}
+	}
+
+	description = "origin_tooltip_mechhegemon"
+	modifier = { planet_pops_robotics_upkeep_mult = -0.05 }
+	random_weight = {
+		base = 5
+	}
+	traits = {
+		
+	}
+}
+
+origin_genericfed = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/fanmech_icon.dds"
+	picture = GFX_origin_mechhegemon
+	max_once_global = yes
+
+	# playable = {
+	# 	host_has_dlc = "Federations"
+	# }
+
+	playable = {
+		always = yes
+	}
+
+	possible = {
+		ethics = {
+			NOR={
+				value = ethic_xenophobe
+				value = ethic_fanatic_xenophobe
+			}
+		}
+		civics = {
+			NOR = {
+				value = civic_machine_assimilator
+				value = civic_barbaric_despoilers
+				value = civic_fanatic_purifiers
+				value = civic_inwards_perfection
+				value = civic_machine_terminator
+				value = civic_hive_devouring_swarm
+			}
+		}
+	}
+
+	description = "origin_tooltip_genericfed"
+	random_weight = {
+		base = 5
+	}
+	traits = {
+	}
+}
+
+origin_gestalthegemon = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/fanmech_icon.dds"
+	picture = GFX_origin_mechhegemon
+	max_once_global = yes
+
+	playable = {
+		host_has_dlc = "Federations"
+	}
+
+	possible = {
+		ethics = {
+			NOR={
+				value = ethic_xenophobe
+				value = ethic_fanatic_xenophobe
+				value = ethic_egalitarian
+				value = ethic_fanatic_egalitarian
+			}
+		}
+		civics = {
+			NOR = {
+				value = civic_fanatic_purifiers
+				value = civic_inwards_perfection
+				value = civic_machine_terminator
+				value = civic_hive_devouring_swarm
+			}
+		}
+	}
+
+	description = "origin_tooltip_gestalthegemon"
+	random_weight = {
+		base = 5
+	}
+	traits = {
+	}
+}
+
