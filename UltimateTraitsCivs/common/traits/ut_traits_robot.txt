@@ -1,0 +1,115 @@
+trait_robot_quantum_chip = {
+	cost = 2
+	improves_leaders = yes
+	# opposites = { "trait_robot_custom_made" }
+	icon = "gfx/interface/icons/traits/robot_qchip_icon.dds"
+	allowed_archetypes = { ROBOT MACHINE }
+	opposites = { "trait_robot_mass_produced" "trait_robot_custom_made" "trait_robot_high_maintenance" "trait_robot_durable" }
+	species_potential_add = {
+		exists = from
+		from = {
+			OR = {
+				has_authority = auth_machine_intelligence
+				has_technology = tech_synthetic_leaders
+			}
+			NOT = { has_policy_flag = ai_outlawed }
+		}
+	}
+	modifier = {
+		pop_assembly_speed = 0.075
+		planet_pops_robotics_upkeep_mult = -0.05
+	}
+	ai_weight = {
+		factor = 0
+	}
+}
+
+
+leader_trait_admiral_robot_qchip = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/robot_qchip_icon.dds"
+	modifier = {
+		ship_evasion_mult = 0.05
+		ship_speed_mult = 0.05
+	}
+	leader_trait = { admiral }
+	leader_class = { admiral }
+	# opposites = { "leader_trait_admiral_cyborg" "leader_trait_admiral_synthetic" }
+	initial = no
+	randomized = no
+}
+
+leader_trait_general_robot_qchip = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/robot_qchip_icon.dds"
+	modifier = {
+		army_damage_mult = 0.05
+		army_morale_damage_mult = 0.05
+		armies_upkeep_mult = -0.05
+	}
+	leader_trait = { general }
+	leader_class = { general }
+	# opposites = { "leader_trait_general_cyborg" "leader_trait_general_synthetic" }
+	initial = no
+	randomized = no
+}
+
+leader_trait_governor_robot_qchip = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/robot_qchip_icon.dds"
+	modifier = {
+		planet_jobs_produces_mult = 0.03
+		# planet_jobs_minerals_produces_mult = 0.05
+		# planet_jobs_energy_produces_mult = 0.05
+	}
+	leader_trait = { governor }
+	leader_class = { governor }
+	# opposites = { "leader_trait_governor_cyborg" "leader_trait_governor_synthetic" }
+	initial = no
+	randomized = no
+}
+
+leader_trait_ruler_robot_qchip = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/robot_qchip_icon.dds"
+	modifier = {
+		starbase_outpost_cost_mult = -0.1
+		station_gatherers_cost_mult = -0.1
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	initial = no
+	randomized = no
+}
+
+leader_trait_scientist_robot_qchip = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/robot_qchip_icon.dds"
+	modifier = {
+		all_technology_research_speed = 0.05
+		science_ship_survey_speed = 0.1
+		ship_anomaly_generation_chance_mult = 0.05
+	}
+	leader_trait = { scientist }
+	leader_class = { scientist }
+	# opposites = { "leader_trait_scientist_cyborg" "leader_trait_scientist_synthetic" }
+	initial = no
+	randomized = no
+
+	ai_categories = {
+		survey
+		physics
+		society
+		engineering
+	}
+
+	ai_weight = {
+		weight = 100
+	}
+}
+

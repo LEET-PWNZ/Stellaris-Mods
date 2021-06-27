@@ -1,0 +1,32 @@
+﻿l_braz_por:
+ trait_gene_modding:0 "Gene Modding"
+ trait_gene_modding_desc:0 "§LThis species relies on gene modification to enhance their leaders, and numerous other genetic features.§!\n"
+
+ leader_trait_admiral_genemod:0 "Gene Modded"
+ leader_trait_admiral_genemod_desc:0 "This leader is gene modded, with an uncanny ability to predict where incoming fire will appear."
+ leader_trait_general_genemod:0 "$leader_trait_admiral_genemod$"
+ leader_trait_general_genemod_desc:0 "This leader is gene modded, capable of bolstering the resolve of the troops while at the same time sowing fear and confusion among the enemy."
+ leader_trait_governor_genemod:0 "$leader_trait_admiral_genemod$"
+ leader_trait_governor_genemod_desc:0 "This leader is gene modded."
+ leader_trait_scientist_genemod:0 "$leader_trait_admiral_genemod$"
+ leader_trait_scientist_genemod_desc:0 "This leader is gene modded."
+ leader_trait_ruler_genemod:0 "$leader_trait_admiral_genemod$"
+ leader_trait_ruler_genemod_desc:0 "This leader is gene modded."
+
+ trait_robot_quantum_chip:0 "Quantum Chips"
+ trait_robot_quantum_chip_desc:0 "§LThese machines rely on quantum chips to enhance their leaders, and numerous other cybernetic features.§!\n"
+
+ leader_trait_admiral_robot_qchip:0 "Quantum chipped"
+ leader_trait_admiral_robot_qchip_desc:0 "This leader is quantum chipped, with an uncanny ability to calculate where incoming fire will appear."
+ leader_trait_general_robot_qchip:0 "$leader_trait_admiral_robot_qchip$"
+ leader_trait_general_robot_qchip_desc:0 "This leader is quantum chipped, capable of bolstering the resolve of the troops while at the same time sowing fear and confusion among the enemy."
+ leader_trait_governor_robot_qchip:0 "$leader_trait_admiral_robot_qchip$"
+ leader_trait_governor_robot_qchip_desc:0 "This leader is quantum chipped."
+ leader_trait_scientist_robot_qchip:0 "$leader_trait_admiral_robot_qchip$"
+ leader_trait_scientist_robot_qchip_desc:0 "This leader is quantum chipped."
+ leader_trait_ruler_robot_qchip:0 "$leader_trait_admiral_robot_qchip$"
+ leader_trait_ruler_robot_qchip_desc:0 "This leader is quantum chipped."
+
+ civic_feudal_diplomat:0 "Feudal Diplomat"
+ civic_feudal_diplomat_desc:0 "This empire specializes in power delegation and diplomatic relations."
+ civic_feudal_diplomat_tooltip:0 "Subjects can expand."

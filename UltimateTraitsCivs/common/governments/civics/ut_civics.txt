@@ -1,0 +1,29 @@
+civic_feudal_diplomat = {
+	playable = { host_has_dlc = "Federations" }
+	ai_playable = { host_has_dlc = "Federations" }
+	potential = {
+		ethics = { NOT = { value = ethic_gestalt_consciousness } }
+		authority = { NOT = { value = auth_corporate } }
+	}
+	possible = {
+		authority = {
+			value = auth_imperial
+		}
+		civics={
+			NOR={
+				value = civic_diplomatic_corps
+				value = civic_feudal_realm
+				value = civic_fanatic_purifiers
+				value = civic_inwards_perfection
+			}
+		}
+	}
+	random_weight = { base = 5 }
+
+	description = "civic_feudal_diplomat_tooltip"
+	modifier = {
+		country_subject_power_penalty_mult = -0.35
+		envoys_add = 1
+		diplo_weight_mult = 0.1
+	}
+}

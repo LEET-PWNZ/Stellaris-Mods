@@ -1,0 +1,102 @@
+trait_gene_modding = {
+	cost = 3
+	potential_crossbreeding_chance = 1.0
+	icon = "gfx/interface/icons/traits/genemod_icon.dds"
+	improves_leaders = yes
+	# initial = yes
+	# randomized = yes
+	# modification = yes
+	opposites = { "trait_extremely_adaptive" "trait_adaptive" "trait_nonadaptive" "trait_robust" "trait_adaptive_lithoid" "trait_slow_breeders" "trait_fertile" "trait_rapid_breeders_lithoid" "trait_rapid_breeders" }
+	allowed_archetypes = { BIOLOGICAL LITHOID }
+	modifier = {
+		pop_growth_speed = 0.05
+		pop_environment_tolerance = 0.05
+	}
+}
+
+leader_trait_admiral_genemod = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/genemod_icon.dds"
+	modifier = {
+		ship_weapon_damage = 0.05
+		ship_fire_rate_mult = 0.05
+	}
+	leader_trait = { admiral }
+	leader_class = { admiral }
+	# opposites = { "leader_trait_admiral_cyborg" "leader_trait_admiral_synthetic" }
+	initial = no
+	randomized = no
+}
+
+leader_trait_general_genemod = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/genemod_icon.dds"
+	modifier = {
+		army_damage_mult = 0.05
+		army_morale_damage_mult = 0.05
+		armies_upkeep_mult = -0.05
+	}
+	leader_trait = { general }
+	leader_class = { general }
+	# opposites = { "leader_trait_general_cyborg" "leader_trait_general_synthetic" }
+	initial = no
+	randomized = no
+}
+
+leader_trait_governor_genemod = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/genemod_icon.dds"
+	modifier = {
+		planet_jobs_produces_mult = 0.03
+	}
+	leader_trait = { governor }
+	leader_class = { governor }
+	# opposites = { "leader_trait_governor_cyborg" "leader_trait_governor_synthetic" }
+	initial = no
+	randomized = no
+}
+
+leader_trait_ruler_genemod = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/genemod_icon.dds"
+	modifier = {
+		starbase_outpost_cost_mult = -0.1
+		station_gatherers_cost_mult = -0.1
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	initial = no
+	randomized = no
+}
+
+leader_trait_scientist_genemod = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/genemod_icon.dds"
+	modifier = {
+		all_technology_research_speed = 0.05
+		science_ship_survey_speed = 0.1
+		ship_anomaly_generation_chance_mult = 0.05
+	}
+	leader_trait = { scientist }
+	leader_class = { scientist }
+	# opposites = { "leader_trait_scientist_cyborg" "leader_trait_scientist_synthetic" }
+	initial = no
+	randomized = no
+
+	ai_categories = {
+		survey
+		physics
+		society
+		engineering
+	}
+
+	ai_weight = {
+		weight = 100
+	}
+}
+

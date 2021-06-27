@@ -1,0 +1,96 @@
+namespace = ut_events_robot
+
+# Give leader traits
+country_event = {
+	id = ut_events_robot.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		from = {
+			species = { has_trait = trait_robot_quantum_chip }
+		}
+	}
+
+	immediate = {
+		from = {
+			if = {
+				limit = { leader_class = admiral }
+				add_trait = leader_trait_admiral_robot_qchip
+				add_ruler_trait = leader_trait_ruler_robot_qchip
+				break = yes
+			}
+			if = {
+				limit = { leader_class = general }
+				add_trait = leader_trait_general_robot_qchip
+				add_ruler_trait = leader_trait_ruler_robot_qchip
+				break = yes
+			}
+			if = {
+				limit = { leader_class = governor }
+				add_trait = leader_trait_governor_robot_qchip
+				add_ruler_trait = leader_trait_ruler_robot_qchip
+				break = yes
+			}
+			if = {
+				limit = { leader_class = scientist }
+				add_trait = leader_trait_scientist_robot_qchip
+				add_ruler_trait = leader_trait_ruler_robot_qchip
+				break = yes
+			}
+			if = {
+				limit = { leader_class = ruler }
+				add_trait = leader_trait_ruler_robot_qchip
+				add_ruler_trait = leader_trait_ruler_robot_qchip
+				break = yes
+			}
+		}
+	}
+}
+
+# Ruler gets normal class trait if one hasn't been assigned
+country_event = {
+	id = ut_events_robot.2
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		from = {
+			OR = {
+				species = { has_trait = trait_robot_quantum_chip }
+				has_ruler_trait = leader_trait_ruler_robot_qchip
+			}
+			NOR = {
+				has_trait = leader_trait_admiral_robot_qchip
+				has_trait = leader_trait_general_robot_qchip
+				has_trait = leader_trait_governor_robot_qchip
+				has_trait = leader_trait_scientist_robot_qchip
+			}
+		}
+	}
+
+	immediate = {
+		from = {
+			if = {
+				limit = { leader_class = admiral }
+				add_trait = leader_trait_admiral_robot_qchip
+				break = yes
+			}
+			if = {
+				limit = { leader_class = general }
+				add_trait = leader_trait_general_robot_qchip
+				break = yes
+			}
+			if = {
+				limit = { leader_class = governor }
+				add_trait = leader_trait_governor_robot_qchip
+				break = yes
+			}
+			if = {
+				limit = { leader_class = scientist }
+				add_trait = leader_trait_scientist_robot_qchip
+				break = yes
+			}
+		}
+	}
+}

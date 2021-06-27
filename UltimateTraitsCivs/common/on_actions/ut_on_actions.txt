@@ -1,0 +1,13 @@
+on_leader_spawned ={
+	events = {
+		ut_events_org.1
+		ut_events_robot.1
+	}
+}
+
+on_ruler_back_to_pre_ruler_class={
+	events ={
+		ut_events_org.2
+		ut_events_robot.2
+	}
+}

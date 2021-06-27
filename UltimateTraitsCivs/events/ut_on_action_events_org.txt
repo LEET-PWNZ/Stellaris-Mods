@@ -1,0 +1,96 @@
+namespace = ut_events_org
+
+# Give leader traits
+country_event = {
+	id = ut_events_org.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		from = {
+			species = { has_trait = trait_gene_modding }
+		}
+	}
+
+	immediate = {
+		from = {
+			if = {
+				limit = { leader_class = admiral }
+				add_trait = leader_trait_admiral_genemod
+				add_ruler_trait = leader_trait_ruler_genemod
+				break = yes
+			}
+			if = {
+				limit = { leader_class = general }
+				add_trait = leader_trait_general_genemod
+				add_ruler_trait = leader_trait_ruler_genemod
+				break = yes
+			}
+			if = {
+				limit = { leader_class = governor }
+				add_trait = leader_trait_governor_genemod
+				add_ruler_trait = leader_trait_ruler_genemod
+				break = yes
+			}
+			if = {
+				limit = { leader_class = scientist }
+				add_trait = leader_trait_scientist_genemod
+				add_ruler_trait = leader_trait_ruler_genemod
+				break = yes
+			}
+			if = {
+				limit = { leader_class = ruler }
+				add_trait = leader_trait_ruler_genemod
+				add_ruler_trait = leader_trait_ruler_genemod
+				break = yes
+			}
+		}
+	}
+}
+
+# Ruler gets normal class trait if one hasn't been assigned
+country_event = {
+	id = ut_events_org.2
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		from = {
+			OR = {
+				species = { has_trait = trait_gene_modding }
+				has_ruler_trait = leader_trait_ruler_genemod
+			}
+			NOR = {
+				has_trait = leader_trait_admiral_genemod
+				has_trait = leader_trait_general_genemod
+				has_trait = leader_trait_governor_genemod
+				has_trait = leader_trait_scientist_genemod
+			}
+		}
+	}
+
+	immediate = {
+		from = {
+			if = {
+				limit = { leader_class = admiral }
+				add_trait = leader_trait_admiral_genemod
+				break = yes
+			}
+			if = {
+				limit = { leader_class = general }
+				add_trait = leader_trait_general_genemod
+				break = yes
+			}
+			if = {
+				limit = { leader_class = governor }
+				add_trait = leader_trait_governor_genemod
+				break = yes
+			}
+			if = {
+				limit = { leader_class = scientist }
+				add_trait = leader_trait_scientist_genemod
+				break = yes
+			}
+		}
+	}
+}
