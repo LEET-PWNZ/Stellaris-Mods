@@ -29,4 +29,6 @@
 
  civic_feudal_diplomat:0 "Feudal Diplomat"
  civic_feudal_diplomat_desc:0 "This empire specializes in power delegation and diplomatic relations."
- civic_feudal_diplomat_tooltip:0 "Subjects can expand."
+ civic_feudal_diplomat_tooltip:0 "Subjects can expand.\nStarts with a vassal as a subject."
+
+ 

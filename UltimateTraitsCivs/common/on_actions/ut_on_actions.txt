@@ -11,3 +11,9 @@ on_ruler_back_to_pre_ruler_class={
 		ut_events_robot.2
 	}
 }
+
+on_game_start = {
+	events = {
+		ut_events_civ.1
+	}
+}

@@ -1,5 +1,5 @@
 version="3"
-name="Ultimate Traits & Civics"
+name="Ultimate Traits and Civics"
 picture="thumbnail.png"
 tags={
 	"Gameplay"
